@@ -157,8 +157,7 @@ $(document).ready(function () {
 
     connection.connect();
 
-    // JitsiMeetJS.createLocalTracks({ devices: ['audio', 'video'] })
-    JitsiMeetJS.createLocalTracks({ devices: ['audio'] })
+    JitsiMeetJS.createLocalTracks({ devices: ['audio', 'video'] })
       .then(onLocalTracks)
       .catch((error) => {
         throw error;
