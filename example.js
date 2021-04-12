@@ -33,13 +33,11 @@ let participantIds = new Set();
 function onLocalTracks(tracks) {
   localTracks = tracks;
   for (let i = 0; i < localTracks.length; i++) {
-    debugger;
     if (localTracks[i].getType() === 'video') {
       $('body').append(`<video autoplay='1' id='localVideo${i}' />`);
       localTracks[i].attach($(`#localVideo${i}`)[0]);
     } else {
-      //   $('body').append(`<audio autoplay='1' muted='true' id='localAudio${i}' />`);
-      $('body').append(`<audio controls autoplay='1'  id='localAudio${i}' />`);
+      $('body').append(`<audio autoplay='1' muted='true' id='localAudio${i}' />`);
       localTracks[i].attach($(`#localAudio${i}`)[0]);
     }
     if (isJoined) {
